@@ -18,9 +18,9 @@ open http://localhost:3000
 
 Add a backend Express/Node api to the React project. See how far you can get, candidates will be assessed on the quality of the code. At least tasks 1 and 3 are needed for the candidate to be considered. 
 
-1 - Create a Express/NodeJs backend api to provide the data for the React App. Make the react application to read data from the api (The data can be static on this task, as the one below is to wire to a database). 
-2 - Add a database to handle the data, such as MongoDB, MariaDB, etc.
-3 - Add tests using your preferred testing tool.
+- Create a Express/NodeJs backend api to provide the data for the React App. Make the react application to read data from the api (The data can be static on this task, as the one below is to wire to a database). 
+- Add a database to handle the data, such as MongoDB, MariaDB, etc.
+- Add tests using your preferred testing tool.
 
 ## Objectives
 

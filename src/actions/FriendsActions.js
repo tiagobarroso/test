@@ -20,3 +20,23 @@ export function starFriend(id) {
     id
   };
 }
+
+export function setFriendGenre(id, genre) {
+  return {
+    type: types.SET_FRIEND_GENRE,
+    id,
+    genre
+  };
+}
+
+export function nextPage() {
+  return {
+    type: types.NEXT_PAGE
+  };
+}
+
+export function backPage() {
+  return {
+    type: types.BACK_PAGE
+  };
+}

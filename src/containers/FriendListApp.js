@@ -2,26 +2,37 @@ import React, { Component } from 'react';
 import styles from './FriendListApp.css';
 import { connect } from 'react-redux';
 
-import {addFriend, deleteFriend, starFriend} from '../actions/FriendsActions';
+import {addFriend, deleteFriend, starFriend, setFriendGenre, nextPage, backPage} from '../actions/FriendsActions';
 import { FriendList, AddFriendInput } from '../components';
+import Paginator from '../components/Paginator';
 
 class FriendListApp extends Component {
 
   render () {
-    const { friendlist: { friendsById }} = this.props;
-
+    const { friendlist: { page }} = this.props;
+    const { friendlist: { pageNumber }} = this.props;
+    const { friendlist: { hasMore }} = this.props;
+    
     const actions = {
       addFriend: this.props.addFriend,
       deleteFriend: this.props.deleteFriend,
-      starFriend: this.props.starFriend
+      starFriend: this.props.starFriend,
+      setFriendGenre: this.props.setFriendGenre,
+      nextPage: this.props.nextPage,
+      backPage: this.props.backPage
     };
 
     return (
+      <div>
       <div className={styles.friendListApp}>
         <h1>The FriendList</h1>
         <AddFriendInput addFriend={actions.addFriend} />
-        <FriendList friends={friendsById} actions={actions} />
+        <FriendList friends={page} actions={actions} />
       </div>
+      <div>
+        <Paginator itensCount={page.length} pageNumber={pageNumber} actions={actions} hasMore={hasMore} />
+      </div>
+     </div>
     );
   }
 }
@@ -33,5 +44,8 @@ function mapStateToProps(state) {
 export default connect(mapStateToProps, {
   addFriend,
   deleteFriend,
-  starFriend
+  starFriend,
+  setFriendGenre,
+  nextPage,
+  backPage
 })(FriendListApp)

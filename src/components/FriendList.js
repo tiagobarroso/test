@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import * as types from '../constants/CommonTypes';
 import styles from './FriendList.css';
 import FriendListItem from './FriendListItem';
 
@@ -7,13 +8,15 @@ class FriendList extends Component {
     return (
       <ul className={styles.friendList}>
         {
-          this.props.friends.map((friend, index) => {
+          this.props.friends
+          .map((friend, index) => {
             return (
               <FriendListItem
                 key={index}
                 id={index}
                 name={friend.name}
                 starred={friend.starred}
+                genre={friend.genre}
                 {...this.props.actions} />
             );
           })
@@ -21,7 +24,6 @@ class FriendList extends Component {
       </ul>
     );
   }
-
 }
 
 FriendList.propTypes = {

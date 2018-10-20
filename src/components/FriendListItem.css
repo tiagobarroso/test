@@ -15,12 +15,28 @@
 }
 
 :local(.friendActions) {
-  flex: 0 0 90px;
+  flex: 0 0 150px;
 }
 
 :local(.btnAction), :local(.btnAction):active, :local(.btnAction):focus, :local(.btnAction):hover {
   margin-right: 5px;
   color: #5C75B0;
+}
+
+:local(.btnPagRight), :local(.btnPagRight):active, :local(.btnPagRight):focus, :local(.btnPagRight):hover {
+  color: #5C75B0;
+  float: right;
+}
+
+:local(.btnPagLeft), :local(.btnPagLeft):active, :local(.btnPagLeft):focus, :local(.btnPagLeft):hover {
+  color: #5C75B0;
+  float: left;
+}
+
+:local(.selectAction){
+  width: 55px;
+  color: #5C75B0;
+  display: inline-block;
 }
 
 button:focus {

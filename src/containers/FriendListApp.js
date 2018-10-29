@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import styles from './FriendListApp.css';
 import { connect } from 'react-redux';
 
-import {addFriend, deleteFriend, starFriend, setFriendGenre, nextPage, backPage} from '../actions/FriendsActions';
+import {addFriend, deleteFriend, starFriend, setFriendGender, nextPage, backPage} from '../actions/FriendsActions';
 import { FriendList, AddFriendInput } from '../components';
 import Paginator from '../components/Paginator';
 
 class FriendListApp extends Component {
 
   render () {
+    
     const { friendlist: { page }} = this.props;
     const { friendlist: { pageNumber }} = this.props;
     const { friendlist: { hasMore }} = this.props;
@@ -17,7 +18,7 @@ class FriendListApp extends Component {
       addFriend: this.props.addFriend,
       deleteFriend: this.props.deleteFriend,
       starFriend: this.props.starFriend,
-      setFriendGenre: this.props.setFriendGenre,
+      setFriendGender: this.props.setFriendGender,
       nextPage: this.props.nextPage,
       backPage: this.props.backPage
     };
@@ -45,7 +46,7 @@ export default connect(mapStateToProps, {
   addFriend,
   deleteFriend,
   starFriend,
-  setFriendGenre,
+  setFriendGender,
   nextPage,
   backPage
 })(FriendListApp)

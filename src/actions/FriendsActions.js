@@ -21,11 +21,17 @@ export function starFriend(id) {
   };
 }
 
-export function setFriendGenre(id, genre) {
+export function setFriendGender(id, gender) {
   return {
     type: types.SET_FRIEND_GENRE,
     id,
-    genre
+    gender
+  };
+}
+
+export function resetState() {
+  return {
+    type: types.RESET_STATE
   };
 }
 

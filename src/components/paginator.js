@@ -5,7 +5,7 @@ function PageBackBtn(props) {
     
     if(props.pageNumber > 1){
         return (
-            <button className={`btn btn-default ${styles.btnPagLeft}`} 
+            <button name="back-btn" className={`btn btn-default ${styles.btnPagLeft}`} 
                 onClick={() => props.action()}>
                 <i className="fa fa-chevron-left" />
             </button>
@@ -21,8 +21,8 @@ function PageNextBtn(props) {
 
     if(props.hasMore){
         return (
-            <button className={`btn btn-default ${styles.btnPagRight}`}
-                    onClick={() => props.action()}>
+            <button name="next-btn" type="button" className={`btn btn-default ${styles.btnPagRight}`}
+                    onClick={() => props.action()} id="ixi'">
                 <i className="fa fa-chevron-right" />
             </button>    
         );
